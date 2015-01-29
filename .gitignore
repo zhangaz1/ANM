@@ -1,7 +1,12 @@
 */*/obj/*
+
 */*/node_modules/*
+node_modules/*
+
+*/*/bower_components/*
+bower_components/*
 
 *.suo
 *.tmp
 
-.ntvs_analysis.dat
+
