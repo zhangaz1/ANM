@@ -9,7 +9,7 @@ module.exports = [
             copyrights: '©Right本项目源码受开源协议保护。',
             version: '0.0.1',
             about: {
-                url: '#about',
+                url: 'about',
                 text: '关于'
             }
         };

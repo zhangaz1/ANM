@@ -1,17 +1,27 @@
 'use strict';
 
+var mRouter = require('./router/index.js');
+var mController = require('./controllers/index.js');
 
 function createModule(context) {
 
+    var miRouter = mRouter(context);
+    var miController = mController(context);
+
     var modules = [
-        require('./controllers/index.js')(context).am.name
+        miRouter.am.name,
+        miController.am.name
     ];
 
     var am = context.angular
         .module(context.app.name, modules)
-        .run(['$rootScope', function($rootScope) {
-            $rootScope.myApp = context.app;
-        }]);
+        .run(['$rootScope',
+            function($rootScope) {
+                $rootScope.myApp = context.app;
+            }
+        ])
+        .run(miRouter.run)
+        .config(miRouter.config);
 
 }
 
