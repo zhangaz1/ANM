@@ -9,6 +9,8 @@ bower_components/*
 */*/build/*
 build/*
 
+/src/client/components/*
+
 *.suo
 *.tmp
 
