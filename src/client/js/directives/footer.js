@@ -1,20 +1,14 @@
 'use strict';
 
 
+var context = require('/config/context.js');
+
 module.exports = function() {
     return {
-        // require: '^tabs',
-        // restrict: 'E',
-        // transclude: true,
-        // scope: {
-        //     title: '@'
-        // },
-        // link: function(scope, element, attrs, tabsCtrl) {
-        //     tabsCtrl.addPane(scope);
-        // },
-        // template: '<div class="tab-pane" ng-class="{active: selected}" ng-transclude>' +
-        //     '</div>',
-        // replace: true
-
+        restrict: 'E',
+        transclude: true,
+        template: context.templates.directives.footer,
+        controller: 'footerController',
+        replace: true
     };
 };

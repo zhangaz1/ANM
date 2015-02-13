@@ -7,13 +7,12 @@ function createModule() {
     var modules = [];
 
     var controllers = {
-        'home': require('./base/home.js'),
-        'content': require('./base/content.js'),
-        'books': require('./books.js')
+        'header': require('./header.js'),
+        'footer': require('./footer.js')
     };
 
     var am = angular
-        .module(context.app.name + '.controllers', modules);
+        .module(context.app.name + 'directives.controllers', modules);
 
     context.modulesLoader(controllers,
         function(controllerName) {

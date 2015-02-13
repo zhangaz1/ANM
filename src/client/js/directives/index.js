@@ -4,7 +4,9 @@
 var context = require('/config/context.js');
 
 function createModule() {
-    var modules = [];
+
+    var controllers = require('./controllers/index.js');
+    var modules = [controllers.am.name];
 
     var directives = {
         'rightClick': require('./rightClick.js'),
@@ -12,8 +14,8 @@ function createModule() {
         'panel': require('./panel.js'),
         'tabs': require('./tabs.js'),
 
-        'header': require('./header.js'),
-        'footer': require('./footer.js')
+        'dheader': require('./header.js'),
+        'dfooter': require('./footer.js')
     };
 
     var am = angular

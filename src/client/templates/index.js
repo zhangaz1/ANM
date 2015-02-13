@@ -18,6 +18,8 @@ module.exports = {
     },
     directives: {
         panel: require('./directives/panel.html'),
-        tabs: require('./directives/tabs.html')
+        tabs: require('./directives/tabs.html'),
+        footer: require('./directives/footer.html'),
+        header: require('./directives/header.html')
     }
 };
