@@ -26,7 +26,7 @@
     };
 
 
-    var min = '.min';
+    var min = '';
     var bc = './bower_components/';
     loadCsses(bc, min);
     loadJses(bc, min);

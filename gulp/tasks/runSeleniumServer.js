@@ -6,7 +6,7 @@ function createTaskHandler(context) {
     return function runSeleniumServer(done) {
         var watchesCache = context.tasks.watchesCache;
         if (!watchesCache[taskName]) {
-            var execCmd = require('../../common/cmd/execCmd');
+            var execCmd = require('./../../common/cmd/execCmd');
             watchesCache[taskName] = execCmd('seleniumserver');
         }
         done(null);

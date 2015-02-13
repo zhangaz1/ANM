@@ -1,6 +1,6 @@
 'use strict';
 
-var duo = require('../libs/duo');
+var duo = require('./../libs/duo');
 
 var map = require('map-stream');
 

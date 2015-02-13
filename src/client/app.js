@@ -2,6 +2,10 @@
 
 
 var context = require('/config/context.js');
-context.modulesLoader = require('/js/common/modulesLoader.js');
+
+(function(context) {
+    context.modulesLoader = require('/js/common/modulesLoader.js');
+})(context);
+
 
 var myApp = require('./js/main.js');
