@@ -1,49 +1,32 @@
 (function() {
 
     var loadCsses = function(bc, min) {
-        var links = {
-            true: [
-                'bootstrap/dist/css/bootstrap.min.css',
-                'bootstrap/dist/css/bootstrap-theme.min.css'
-            ],
-            false: [
-                'bootstrap/dist/css/bootstrap.css',
-                'bootstrap/dist/css/bootstrap-theme.css'
-            ]
-        };
+        var links = [
+            'bootstrap/dist/css/bootstrap',
+            'bootstrap/dist/css/bootstrap-theme'
+        ];
 
-        var useLinks = links[min];
-        for (var li in useLinks) {
-            document.write('<link rel="stylesheet" href="' + bc + useLinks[li] + '" />');
+        for (var li in links) {
+            document.write('<link rel="stylesheet" href="' + bc + links[li] + min + '.css" />');
         }
     };
 
     var loadJses = function(bc, min) {
-        var scripts = {
-            true: [
-                'lodash/lodash.min.js',
-                'jquery/dist/jquery.min.js',
-                'bootstrap/dist/js/bootstrap.min.js',
-                'angular/angular.min.js',
-                'angular-ui-router/release/angular-ui-router.min.js'
-            ],
-            false: [
-                'lodash/lodash.js',
-                'jquery/dist/jquery.js',
-                'bootstrap/dist/js/bootstrap.js',
-                'angular/angular.js',
-                'angular-ui-router/release/angular-ui-router.js'
-            ]
-        };
+        var scripts = [
+            'lodash/lodash',
+            'jquery/dist/jquery',
+            'bootstrap/dist/js/bootstrap',
+            'angular/angular',
+            'angular-ui-router/release/angular-ui-router'
+        ];
 
-        var useScripts = scripts[min];
-        for (var li in useScripts) {
-            document.write('<script type="text/javascript" language="javascript" src="' + bc + useScripts[li] + '"></script>');
+        for (var li in scripts) {
+            document.write('<script type="text/javascript" language="javascript" src="' + bc + scripts[li] + min + '.js"></script>');
         }
     };
 
 
-    var min = false;
+    var min = '.min';
     var bc = './bower_components/';
     loadCsses(bc, min);
     loadJses(bc, min);
