@@ -29,6 +29,7 @@ module.exports = {
     clientCss: pathHelper.resolve('../src/client/**/*.css'),
 
     clientJs: pathHelper.resolve('../src/client/**/*.js'),
+    clientTemplates: pathHelper.resolve('../src/client/templates/**/*.html'),
 
     clientBuildFiles: '!' + pathHelper.resolve('../src/client/build/*.*'),
 

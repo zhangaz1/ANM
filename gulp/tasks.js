@@ -29,6 +29,7 @@ var tasks = {
 
     watchClientStyles: 'watchClientStyles',
     watchClientJses: 'watchClientJses',
+    watchClientTemplates: 'watchClientTemplates',
 
     watchServerUnitTests: 'watchServerUnitTests',
     watchKarmaClientUnitTests: 'watchKarmaClientUnitTests',
@@ -67,6 +68,7 @@ function addTasks(context) {
 
     require('./tasks/watchGulpSelf')(context);
 
+    require('./tasks/watchClientTemplates')(context);
     require('./tasks/watchClientJses')(context);
     require('./tasks/watchClientStyles')(context);
 

@@ -7,12 +7,14 @@ function createTask(context) {
         tasks.devOnLine,
         'dev online open home and livereload', [
             tasks.build,
+
+            tasks.runAllTests,
+
             tasks.runWebServer,
             tasks.runLiveReloadServer,
             tasks.browserHomePage,
 
-            tasks.watchClientStyles,
-            tasks.watchClientJses
+            tasks.watchAll
         ],
         function(done) {
             done(null);

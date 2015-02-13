@@ -1,32 +1,35 @@
 'use strict';
 
-var mRouter = require('./router/index.js');
-var mController = require('./controllers/index.js');
 
-function createModule(context) {
+var context = require('/config/context.js');
 
-    var miRouter = mRouter(context);
-    var miController = mController(context);
+function createModule() {
+    var modules = {
+        router: require('./router/index.js'),
+        services: require('./services/index.js'),
+        directives: require('./directives/index.js'),
+        controllers: require('./controllers/index.js')
+    };
 
-    var modules = [
-        miRouter.am.name,
-        miController.am.name
-    ];
+    var dmodules = [];
+
+    context.modulesLoader(modules,
+        function(moduleName) {
+            dmodules.push(modules[moduleName].am.name);
+        });
 
     var am = context.angular
-        .module(context.app.name, modules)
+        .module(context.app.name, dmodules)
         .run(['$rootScope',
             function($rootScope) {
                 $rootScope.myApp = context.app;
             }
         ])
-        .run(miRouter.run)
-        .config(miRouter.config);
+        .run(modules.router.run)
+        .config(modules.router.config);
 
 }
 
-module.exports = function(context) {
-    return {
-        am: createModule(context)
-    };
+module.exports = {
+    am: createModule()
 };

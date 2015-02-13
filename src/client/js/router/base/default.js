@@ -1,0 +1,71 @@
+'use strict';
+
+
+var context = require('/config/context.js');
+
+module.exports = {
+    name: '/',
+    url: '/',
+    template: context.templates.base['default'],
+    data: {
+        customData1: 5,
+        customData2: 'blue'
+    },
+    controller: function($scope, simpleData, promiseData,
+        promiseData2, translations, translations2, greeting) {
+        $scope.title = 'My Contract';
+        $scope.simpleData = simpleData;
+        $scope.promiseData = promiseData;
+        $scope.translations = translations;
+        $scope.translations2 = translations2;
+        $scope.greeting = greeting;
+
+        $scope.$on('$viewContentLoading',
+            function(event, viewConfig) {
+                console.log('$viewContentLoading(default scope): ', viewConfig);
+            });
+    },
+    onEnter: function(simpleData) {
+        if (simpleData) {
+            alert(simpleData);
+        }
+    },
+    onExit: function(simpleData) {
+        if (simpleData) {
+            alert(simpleData);
+        }
+    },
+    resolve: {
+        simpleData: function() {
+            return {
+                value: 'simple!'
+            };
+        },
+        promiseData: function($http) {
+            return $http({
+                method: 'GET',
+                url: '/someData/1'
+            });
+        },
+        promiseData2: function($http) {
+            return $http({
+                method: 'GET',
+                url: '/someData/5'
+            }).then(function(data) {
+                // retrun doSomeStuffFirst(data);
+                return data;
+            });
+        },
+        translations: 'factory',
+        translations2: function(factory, $stateParams) {
+            return factory.getPrivate();
+        },
+        greeting: function($q, $timeout) {
+            var deferred = $q.defer();
+            $timeout(function() {
+                deferred.resolve('Hello!');
+            }, 1000);
+            return deferred.promise;
+        }
+    }
+};

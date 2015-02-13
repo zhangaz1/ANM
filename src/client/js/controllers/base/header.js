@@ -15,12 +15,21 @@ module.exports = [
                 url: 'settings',
                 text: '设置'
             }, {
+                url: 'books',
+                text: '书'
+            }, {
+                url: 'images',
+                text: '图片'
+            }, {
                 url: 'else',
                 text: '其它'
+            }, {
+                url: 'foo',
+                text: '不存在'
             }],
 
             rightNavs: [{
-                url: '/admin.html',
+                url: 'admin',
                 text: '管理'
             }]
         };

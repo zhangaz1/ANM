@@ -7,6 +7,7 @@ function createTask(context) {
         'watch all', [
             tasks.watchClientStyles,
             tasks.watchClientJses,
+            tasks.watchClientTemplates,
             tasks.watchGulpSelf,
             tasks.watchServerUnitTests,
             tasks.watchKarmaClientUnitTests,

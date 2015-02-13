@@ -1,7 +1,9 @@
 'use strict';
 
 
-function createModule(context) {
+var context = require('/config/context.js');
+
+function createModule() {
     var modules = [];
 
     var controllers = {
@@ -15,10 +17,8 @@ function createModule(context) {
     var am = angular
         .module(context.app.name + '.controllers', modules);
 
-    context
-        ._
-        .keysIn(controllers)
-        .forEach(function(controllerName) {
+    context.modulesLoader(controllers,
+        function(controllerName) {
             am.controller(
                 controllerName + 'Controller',
                 controllers[controllerName]
@@ -28,8 +28,6 @@ function createModule(context) {
     return am;
 }
 
-module.exports = function(context) {
-    return {
-        am: createModule(context)
-    };
+module.exports = {
+    am: createModule()
 };
