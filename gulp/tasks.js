@@ -14,6 +14,8 @@ var tasks = {
     runAllServers: 'runAllServers',
     runWebServer: 'runWebServer',
     runSeleniumServer: 'runSeleniumServer',
+    runMongoDBServer: 'runMongoDBServer',
+    runRedisServer: 'runRedisServer',
 
     runAllTests: 'runAllTests',
     runUnitTests: 'runUnitTests',
@@ -52,6 +54,8 @@ function addTasks(context) {
 
     require('./tasks/build')(context);
 
+    require('./tasks/runMongoDBServer')(context);
+    require('./tasks/runRedisServer')(context);
     require('./tasks/runWebServer')(context);
     require('./tasks/runSeleniumServer')(context);
     require('./tasks/runAllServers')(context);

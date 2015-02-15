@@ -6,6 +6,8 @@ function createTask(context) {
     context.gulp.task(
         tasks.runAllServers,
         'run all servers(webServer and seleniumServer)', [
+            tasks.runRedisServer,
+            tasks.runMongoDBServer,
             tasks.runWebServer,
             tasks.runSeleniumServer
         ],

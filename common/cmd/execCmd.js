@@ -1,6 +1,9 @@
+'use strict';
+
+
 var exec = require('child_process').exec;
 
-function execCmd(cmd) {
+module.exports = function execCmd(cmd) {
     return exec('start ' + cmd, function(err, stdout, stderr) {
         if (err) {
             console.log(stdout, stderr);
@@ -8,6 +11,4 @@ function execCmd(cmd) {
             console.log(stdout);
         }
     });
-}
-
-module.exports = execCmd;
+};
