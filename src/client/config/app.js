@@ -2,5 +2,5 @@
 
 module.exports = {
     name: 'myApp',
-    title: 'The Weather'
+    title: 'ANM Basknrm demo'
 };
