@@ -8,7 +8,7 @@ module.exports = function(treeName) {
     var state = stateFactory(treeName, name);
 
     state.data = {
-        states: ['list', 'detail', 'edit']
+        states: ['list', 'detail', 'add']
     };
 
     state.controller = ['$scope', '$state', function($scope, $state) {

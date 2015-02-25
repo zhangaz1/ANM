@@ -8,10 +8,9 @@ function createTask(context) {
         'dev online open home and livereload', [
             tasks.build,
 
+            tasks.runAllServers,
             tasks.runAllTests,
 
-            tasks.runWebServer,
-            tasks.runLiveReloadServer,
             tasks.browserHomePage,
 
             tasks.watchAll

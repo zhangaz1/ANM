@@ -9,7 +9,8 @@ function createTask(context) {
             tasks.runRedisServer,
             tasks.runMongoDBServer,
             tasks.runWebServer,
-            tasks.runSeleniumServer
+            tasks.runSeleniumServer,
+            tasks.runLiveReloadServer
         ],
         function(done) {
             done(null);
