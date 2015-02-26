@@ -1,6 +1,8 @@
 'use strict';
 
 
+var context = require('/config/context.js');
+
 module.exports = [
     '$scope',
     function($scope) {
@@ -9,7 +11,7 @@ module.exports = [
             copyrights: '©Right本项目源码受开源协议保护。',
             version: '0.0.1',
             about: {
-                url: 'about',
+                name: context.namespace.modules.router.base.about.name,
                 text: '关于'
             }
         };

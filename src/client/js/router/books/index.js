@@ -2,7 +2,6 @@
 
 
 var context = require('/config/context.js');
-var treeName = 'books';
 
 module.exports = function($stateProvider) {
     var states = {
@@ -15,6 +14,6 @@ module.exports = function($stateProvider) {
     context.modulesLoader(states,
         function(stateName) {
             $stateProvider
-                .state(states[stateName](treeName));
+                .state(states[stateName]);
         });
 };

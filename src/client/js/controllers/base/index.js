@@ -2,17 +2,15 @@
 
 
 var context = require('/config/context.js');
-var sns = context.namespace.modules.services;
 
 function createModule() {
     var modules = [];
 
     var am = angular
-        .module(sns.name, modules);
+        .module(context.namespace.modules.controllers.base.name, modules);
 
-    require('./constant.js');
-    require('./value.js');
-    require('./factory.js');
+    require('./content.js');
+    require('./home.js');
 
     return am;
 }

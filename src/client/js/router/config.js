@@ -11,16 +11,7 @@ module.exports = ['$stateProvider', '$urlRouterProvider',
         //     .when('/s', '/start')
         //     .otherwise('/');
 
-        var stateTrees = {
-            'base': require('./base/index.js'),
-            books: require('./books/index.js')
-        };
-
-        context
-            ._
-            .keysIn(stateTrees)
-            .forEach(function(stateTreeName) {
-                stateTrees[stateTreeName]($stateProvider);
-            });
+        require('./base/index.js')($stateProvider);
+        require('./books/index.js')($stateProvider);
     }
 ];

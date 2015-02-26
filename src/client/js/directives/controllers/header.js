@@ -1,35 +1,38 @@
 'use strict';
 
 
+var context = require('/config/context.js');
+var base = context.namespace.modules.router.base;
+
 module.exports = [
     '$scope',
     function($scope) {
         $scope.header = {
             leftNavs: [{
-                url: '/',
+                name: base.default.name,
                 text: '首页'
             }, {
-                url: 'start',
+                name: base.start.name,
                 text: '起步'
             }, {
-                url: 'settings',
+                name: base.settings.name,
                 text: '设置'
             }, {
-                url: 'books',
+                name: base.books.name,
                 text: '书'
             }, {
-                url: 'images',
+                name: base.images.name,
                 text: '图片'
             }, {
-                url: 'else',
+                name: base.else.name,
                 text: '其它'
             }, {
-                url: 'foo',
+                name: base.foo.name,
                 text: '不存在'
             }],
 
             rightNavs: [{
-                url: 'admin',
+                name: base.admin.name,
                 text: '管理'
             }]
         };

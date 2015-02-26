@@ -1,7 +1,12 @@
 'use strict';
 
 
-module.exports = [
-    '$scope',
-    function($scope) {}
-];
+var context = require('/config/context.js');
+var cns = context.namespace.modules.controllers;
+
+angular
+    .module(cns.name)
+    .controller(cns.books.name, [
+        '$scope',
+        function($scope) {}
+    ]);

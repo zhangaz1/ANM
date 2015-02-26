@@ -4,19 +4,20 @@
 var context = require('/config/context.js');
 
 function createModule() {
-    var modules = {
-        router: require('./router/index.js'),
-        services: require('./services/index.js'),
-        directives: require('./directives/index.js'),
-        controllers: require('./controllers/index.js')
-    };
 
-    var dmodules = [];
+    var router = require('./router/index.js');
+    require('./services/index.js');
+    require('./directives/index.js');
+    require('./controllers/index.js');
 
-    context.modulesLoader(modules,
-        function(moduleName) {
-            dmodules.push(modules[moduleName].am.name);
-        });
+
+    var mns = context.namespace.modules;
+    var dmodules = [
+        mns.router.name,
+        mns.services.name,
+        mns.directives.name,
+        mns.controllers.name
+    ];
 
     var am = context.angular
         .module(context.app.name, dmodules)
@@ -25,9 +26,8 @@ function createModule() {
                 $rootScope.myApp = context.app;
             }
         ])
-        .run(modules.router.run)
-        .config(modules.router.config);
-
+        .run(router.run)
+        .config(router.config);
 }
 
 module.exports = {

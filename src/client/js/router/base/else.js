@@ -2,10 +2,11 @@
 
 
 var context = require('/config/context.js');
+var _else = context.namespace.modules.router.base.else;
 
 module.exports = {
-    name: 'else',
-    url: '/else/:type',
+    name: _else.name,
+    url: _else.url,
     templateProvider: function($timeout, $stateParams) {
         return $timeout(function() {
             return context.templates.base['else'];

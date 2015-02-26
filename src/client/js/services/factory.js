@@ -1,8 +1,12 @@
 'use strict';
 
 
-module.exports = function(am) {
-    am.factory('factory', function() {
+var context = require('/config/context.js');
+var sns = context.namespace.modules.services;
+
+angular
+    .module(sns.name)
+    .factory(sns.factory.name, function() {
         var thisIsPrivate = "Private";
 
         function getPrivate() {
@@ -15,4 +19,3 @@ module.exports = function(am) {
         };
 
     });
-};

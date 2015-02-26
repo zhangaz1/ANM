@@ -4,7 +4,9 @@
 var context = require('/config/context.js');
 var subModuleName = 'base';
 
-function createModule() {
+function createModule(parentModuleName) {
+    var moduleName = parentModuleName + '.' + subModuleName;
+
     var modules = [];
 
     var controllers = {
@@ -14,7 +16,7 @@ function createModule() {
     };
 
     var am = angular
-        .module(context.app.name + '.router.controllers.' + subModuleName, modules);
+        .module(moduleName, modules);
 
     context.modulesLoader(controllers,
         function(controllerName) {
@@ -27,6 +29,8 @@ function createModule() {
     return am;
 }
 
-module.exports = {
-    am: createModule()
+module.exports = function(parentModuleName) {
+    return {
+        am: createModule(parentModuleName)
+    }
 };

@@ -1,9 +1,12 @@
 'use strict';
 
 
-module.exports = function(am) {
-    am.value('value', {
+var context = require('/config/context.js');
+var sns = context.namespace.modules.services;
+
+angular
+    .module(sns.name)
+    .value(sns.value.name, {
         config1: true,
         config2: "Default config2 but it can changes"
     });
-};

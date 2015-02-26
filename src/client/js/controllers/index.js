@@ -2,26 +2,16 @@
 
 
 var context = require('/config/context.js');
+var cns = context.namespace.modules.controllers;
 
 function createModule() {
-    var modules = [];
-
-    var controllers = {
-        'home': require('./base/home.js'),
-        'content': require('./base/content.js'),
-        'books': require('./books.js')
-    };
+    var modules = [cns.base.name];
 
     var am = angular
-        .module(context.app.name + '.controllers', modules);
+        .module(cns.name, modules);
 
-    context.modulesLoader(controllers,
-        function(controllerName) {
-            am.controller(
-                controllerName + 'Controller',
-                controllers[controllerName]
-            );
-        });
+    require('./base/index.js');
+    require('./books.js');
 
     return am;
 }

@@ -1,11 +1,13 @@
 'use strict';
 
 
-var stateFactory = require('./../stateFactory.js');
-var name = 'detail';
+var context = require('/config/context.js');
+var books = context.namespace.modules.router.books;
 
-module.exports = function(treeName) {
-    var state = stateFactory(treeName, name);
-    state.url += '/{id}';
-    return state;
-};
+var stateFactory = require('./../stateFactory.js');
+
+var state = stateFactory(books.name, books.detail.name);
+
+state.url += '/{id}';
+
+module.exports = state;

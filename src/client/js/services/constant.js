@@ -1,9 +1,12 @@
 'use strict';
 
 
-module.exports = function(am) {
-    am.constant('constant', {
+var context = require('/config/context.js');
+var sns = context.namespace.modules.services;
+
+angular
+    .module(sns.name)
+    .constant(sns.constant.name, {
         config1: true,
         config2: "Default config2"
     });
-};

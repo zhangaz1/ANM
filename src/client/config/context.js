@@ -5,6 +5,8 @@ module.exports = {
     $: $,
     jQuery: jQuery,
     angular: angular,
+    sf: sprintf,
+    vsf: vsprintf,
 
     app: require('./app.js'),
     templates: require('./../templates/index.js')

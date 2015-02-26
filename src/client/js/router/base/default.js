@@ -2,10 +2,11 @@
 
 
 var context = require('/config/context.js');
+var _default = context.namespace.modules.router.base.default;
 
 module.exports = {
-    name: '/',
-    url: '/',
+    name: _default.name,
+    url: _default.url,
     template: context.templates.base['default'],
     data: {
         customData1: 5,

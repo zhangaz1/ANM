@@ -3,11 +3,13 @@
 
 var context = require('/config/context.js');
 
+var moduleName = context.app.name + '.router.controllers';
+
 function createModule() {
     var modules = [];
 
     var cms = {
-        'base': require('./base/index.js') // ,
+        'base': require('./base/index.js')(moduleName) // ,
             // books: require('./books/index.js')
     };
 
@@ -19,7 +21,7 @@ function createModule() {
         });
 
     var am = angular
-        .module(context.app.name + '.router.controllers', modules);
+        .module(moduleName, modules);
 
     return am;
 }

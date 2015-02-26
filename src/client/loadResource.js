@@ -25,7 +25,7 @@
             scripts.push(bc + baseScripts[li] + min + '.js');
         }
 
-        scripts.push(bc + min ? 'sprintf/dist/sprintf.min.js' : 'sprintf/src/sprintf.js');
+        scripts.push(bc + (min ? 'sprintf/dist/sprintf.min.js' : 'sprintf/src/sprintf.js'));
 
         for (var li in scripts) {
             document.write('<script type="text/javascript" language="javascript" src="' + scripts[li] + '"></script>');

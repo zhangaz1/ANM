@@ -5,10 +5,14 @@ var duo = require('./../libs/duo');
 var map = require('map-stream');
 
 function buildClientJses(context, done) {
-    context.gulp
-        .src(context.config.clientAppJsFile)
-        .pipe(duo())
-        .pipe(context.gulp.dest(context.config.clientBuildDir));
+    try {
+        context.gulp
+            .src(context.config.clientAppJsFile)
+            .pipe(duo())
+            .pipe(context.gulp.dest(context.config.clientBuildDir));
+    } catch (ex) {
+        console.log(ex);
+    }
 
     done(null);
 }

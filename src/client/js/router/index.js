@@ -12,7 +12,7 @@ function createModule() {
     ];
 
     var am = angular
-        .module(context.app.name + '.router', modules);
+        .module(context.namespace.modules.router.name, modules);
 
     return am;
 }

@@ -2,7 +2,6 @@
 
 
 var context = require('/config/context.js');
-var treeName = 'base';
 
 module.exports = function($stateProvider) {
     var states = {
