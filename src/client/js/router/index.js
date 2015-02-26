@@ -4,7 +4,12 @@
 var context = require('/config/context.js');
 
 function createModule() {
-    var modules = ['ui.router'];
+    var controllers = require('./controllers/index.js');
+
+    var modules = [
+        'ui.router',
+        controllers.am.name
+    ];
 
     var am = angular
         .module(context.app.name + '.router', modules);
