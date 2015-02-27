@@ -2,30 +2,14 @@
 
 
 var context = require('/config/context.js');
+var cns = context.namespace.modules.router.controllers;
 
-var moduleName = context.app.name + '.router.controllers';
+var modules = [
+    cns.base.name
+];
 
-function createModule() {
-    var modules = [];
+context
+    .angular
+    .module(cns.name, modules);
 
-    var cms = {
-        'base': require('./base/index.js')(moduleName) // ,
-            // books: require('./books/index.js')
-    };
-
-    context
-        ._
-        .keysIn(cms)
-        .forEach(function(cmName) {
-            modules.push(cms[cmName].am.name);
-        });
-
-    var am = angular
-        .module(moduleName, modules);
-
-    return am;
-}
-
-module.exports = {
-    am: createModule()
-};
+require('./base/index.js');

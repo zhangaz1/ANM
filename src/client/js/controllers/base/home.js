@@ -4,7 +4,8 @@
 var context = require('/config/context.js');
 var bcns = context.namespace.modules.controllers.base;
 
-angular
+context
+    .angular
     .module(bcns.name)
     .controller(bcns.home.name, [
         '$scope',

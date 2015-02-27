@@ -3,18 +3,9 @@
 
 var context = require('/config/context.js');
 
-function createModule() {
-    var modules = [];
+context
+    .angular
+    .module(context.namespace.modules.directives.controllers.name, []);
 
-    var am = angular
-        .module(context.namespace.modules.directives.controllers.name, modules);
-
-    require('./header.js');
-    require('./footer.js');
-
-    return am;
-}
-
-module.exports = {
-    am: createModule()
-};
+require('./header.js');
+require('./footer.js');

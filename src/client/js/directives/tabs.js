@@ -4,7 +4,8 @@
 var context = require('/config/context.js');
 var dns = context.namespace.modules.directives;
 
-angular
+context
+    .angular
     .module(dns.name)
     .directive(dns.tabs.name, function() {
         return {

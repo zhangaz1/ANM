@@ -4,7 +4,8 @@
 var context = require('/config/context.js');
 var dns = context.namespace.modules.directives;
 
-angular
+context
+    .angular
     .module(dns.name)
     .directive(dns.rightClick.name, function($parse) {
         return function(scope, element, attrs) {

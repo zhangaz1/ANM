@@ -4,7 +4,8 @@
 var context = require('/config/context.js');
 var sns = context.namespace.modules.services;
 
-angular
+context
+    .angular
     .module(sns.name)
     .factory(sns.factory.name, function() {
         var thisIsPrivate = "Private";
@@ -17,5 +18,4 @@ angular
             variable: "This is public",
             getPrivate: getPrivate
         };
-
     });

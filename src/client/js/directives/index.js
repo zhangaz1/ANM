@@ -4,27 +4,18 @@
 var context = require('/config/context.js');
 var dns = context.namespace.modules.directives;
 
-function createModule() {
+var modules = [dns.controllers.name];
 
-    var modules = [dns.controllers.name];
+context
+    .angular
+    .module(dns.name, modules);
 
-    var am = angular
-        .module(dns.name, modules);
+require('./controllers/index.js');
 
-    require('./controllers/index.js');
+require('./rightClick.js');
 
-    require('./rightClick.js');
+require('./panel.js');
+require('./tabs.js');
 
-    require('./panel.js');
-    require('./tabs.js');
-
-    require('./header.js');
-    require('./footer.js');
-
-
-    return am;
-}
-
-module.exports = {
-    am: createModule()
-};
+require('./header.js');
+require('./footer.js');

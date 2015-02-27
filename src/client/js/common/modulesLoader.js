@@ -4,7 +4,8 @@
 var context = require('/config/context.js');
 
 module.exports = function(modules, loader) {
-    context._
+    context
+        ._
         .keysIn(modules)
         .forEach(loader);
 };

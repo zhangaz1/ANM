@@ -4,7 +4,8 @@
 var context = require('/config/context.js');
 var sns = context.namespace.modules.services;
 
-angular
+context
+    .angular
     .module(sns.name)
     .value(sns.value.name, {
         config1: true,

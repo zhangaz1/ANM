@@ -34,97 +34,56 @@
 
 <body data-spy="scroll" data-target="#myScrollspy">
 
-    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
-        <div class="container"><span class="skiplink-text">Skip to main content</span>
-        </div>
-    </a>
+    <dheader></dheader>
 
+    <div ui-view>
 
-    <!-- Docs master nav -->
-    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner" ng-controller="headerController">
-        <div class="container">
-            <div class="navbar-header">
-                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-                    <span class="sr-only">切换导航</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="../" class="navbar-brand">{{ myApp.title }}</a>
-            </div>
-            <nav class="collapse navbar-collapse bs-navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li ng-repeat="nav in header.leftNavs">
-                        <a href="{{ nav.url }}">{{ nav.text }}</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li ng-repeat="nav in header.rightNavs">
-                        <a href="{{ nav.url }}">{{ nav.text }}</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div>
-        <!-- Docs page layout -->
-        <div class="bs-docs-header" id="content">
-            <div class="container" ng-controller="homeController">
-                <h1>{{ start.title }}</h1>
-                <p>{{ start.content }}</p>
-            </div>
-        </div>
-
-        <div class="container bs-docs-container">
-
-            <div class="row" ng-controller="contentController">
-
-                <div class="col-md-9" role="main">
-                    <div ng-repeat="(ci, chapter) in chapters">
-                        <h2 id="section-{{ ci }}">{{ chapter.title }}</h2>
-                        <p id="p-{{ ci }}-{{ si }}" ng-repeat="(si, section) in chapter.sections">{{ section }}</p>
-                    </div>
+        <div>
+            <!-- Docs page layout -->
+            <div class="bs-docs-header" id="content">
+                <div class="container" ng-controller="homeController">
+                    <h1>{{ start.title }}</h1>
+                    <p>{{ start.content }}</p>
                 </div>
+            </div>
 
-                <div class="col-md-3" role="complementary">
-                    <nav id="myScrollspy" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" data-spy="affix" data-offset-top="250">
+            <div class="container bs-docs-container">
 
-                        <ul class="nav bs-docs-sidenav">
-                            <li ng-repeat="(ci, chapter) in chapters">
-                                <a ng-href="#section-{{ ci }}">{{ chapter.title }}</a>
-                                <ul class="nav">
-                                    <li ng-repeat="(si, section) in chapter.sections">
-                                        <a ng-href="#p-{{ ci }}-{{ si }}">
+                <div class="row" ng-controller="contentController">
+
+                    <div class="col-md-9" role="main">
+                        <div ng-repeat="(ci, chapter) in chapters">
+                            <h2 id="section-{{ ci }}">{{ chapter.title }}</h2>
+                            <p id="p-{{ ci }}-{{ si }}" ng-repeat="(si, section) in chapter.sections">{{ section }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3" role="complementary">
+                        <nav id="myScrollspy" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" data-spy="affix" data-offset-top="250">
+
+                            <ul class="nav bs-docs-sidenav">
+                                <li ng-repeat="(ci, chapter) in chapters">
+                                    <a ng-href="#section-{{ ci }}">{{ chapter.title }}</a>
+                                    <ul class="nav">
+                                        <li ng-repeat="(si, section) in chapter.sections">
+                                            <a ng-href="#p-{{ ci }}-{{ si }}">
                                             {{ ci + 1 }}-{{ si + 1 }}
                                         </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
                 </div>
 
             </div>
-
         </div>
+
     </div>
 
-    <!-- Footer -->
-    <footer class="bs-docs-footer" role="contentinfo">
-        <div class="container" ng-controller="footerController">
-
-            <p>Designed and built with all the love in the world by <a href="mailto:{{ footer.author }}">@{{ footer.author }}</a>
-            </p>
-            <p>{{ footer.copyrights }}</p>
-            <ul class="bs-docs-footer-links text-muted">
-                <li>当前版本： V{{ footer.version }}</li>
-                <li>·</li>
-                <li><a href="{{ footer.about.url }}">{{ footer.about.text }}</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+    <dfooter></dfooter>
 
 </body>
 

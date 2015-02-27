@@ -4,7 +4,8 @@
 var context = require('/config/context.js');
 var cns = context.namespace.modules.directives.controllers;
 
-angular
+context
+    .angular
     .module(cns.name)
     .controller(cns.footer.name, [
         '$scope',

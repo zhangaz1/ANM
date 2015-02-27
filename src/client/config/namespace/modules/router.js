@@ -60,4 +60,12 @@ var router = {
     }
 };
 
+router.controllers = {
+    name: context.vsf('%s.controllers', [router.name])
+};
+
+router.controllers.base = {
+    name: context.vsf('%s.base', [router.controllers.name])
+};
+
 module.exports = router;

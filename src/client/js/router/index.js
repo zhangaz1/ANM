@@ -2,23 +2,21 @@
 
 
 var context = require('/config/context.js');
+var rns = context.namespace.modules.router;
 
-function createModule() {
-    var controllers = require('./controllers/index.js');
+var modules = [
+    'ui.router',
+    rns.controllers.name
+];
 
-    var modules = [
-        'ui.router',
-        controllers.am.name
-    ];
+require('./controllers/index.js');
 
-    var am = angular
-        .module(context.namespace.modules.router.name, modules);
+context
+    .angular
+    .module(rns.name, modules);
 
-    return am;
-}
 
 module.exports = {
-    am: createModule(),
     run: require('./run.js'),
     config: require('./config.js')
 };

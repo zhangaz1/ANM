@@ -5,7 +5,8 @@ var context = require('/config/context.js');
 var cns = context.namespace.modules.directives.controllers;
 var base = context.namespace.modules.router.base;
 
-angular
+context
+    .angular
     .module(cns.name)
     .controller(cns.header.name, [
         '$scope',

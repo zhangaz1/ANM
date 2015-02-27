@@ -11,6 +11,9 @@ var context = require('/config/context.js');
 })(context);
 
 
-var myApp =
-    window.myApp = require('./js/main.js');
-myApp.context = context;
+require('./js/main.js');
+
+window.myApp = {
+    context: context,
+    am: context.angular.module(context.app.name)
+};
