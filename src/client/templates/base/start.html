@@ -1,1 +1,42 @@
-<h3>Start here{{ header | json }}</h3>
+<div>
+    <!-- Docs page layout -->
+    <div class="bs-docs-header" id="content">
+        <div class="container">
+            <h1>{{ start.title }}</h1>
+            <p>{{ start.content }}</p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+
+        <div class="row">
+
+            <div class="col-md-9" role="main">
+                <div ng-repeat="(ci, chapter) in chapters">
+                    <h2 id="section-{{ ci }}">{{ chapter.title }}</h2>
+                    <p id="p-{{ ci }}-{{ si }}" ng-repeat="(si, section) in chapter.sections">{{ section }}</p>
+                </div>
+            </div>
+
+            <div class="col-md-3" role="complementary">
+                <nav id="myScrollspy" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" data-spy="affix" data-offset-top="250">
+
+                    <ul class="nav bs-docs-sidenav">
+                        <li ng-repeat="(ci, chapter) in chapters">
+                            <a ng-href="#section-{{ ci }}">{{ chapter.title }}</a>
+                            <ul class="nav">
+                                <li ng-repeat="(si, section) in chapter.sections">
+                                    <a ng-href="#p-{{ ci }}-{{ si }}">
+                                            {{ ci + 1 }}-{{ si + 1 }}
+                                        </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+    </div>
+</div>

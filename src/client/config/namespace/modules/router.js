@@ -65,7 +65,10 @@ router.controllers = {
 };
 
 router.controllers.base = {
-    name: context.vsf('%s.base', [router.controllers.name])
+    name: context.vsf('%s.base', [router.controllers.name]),
+    start: {
+        name: 'startController'
+    }
 };
 
 module.exports = router;
