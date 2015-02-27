@@ -2,16 +2,16 @@
 
 
 var context = require('/config/context.js');
+var dns = context.namespace.modules.directives;
 
 function createModule() {
 
-    var controllers = require('./controllers/index.js');
-    var modules = [controllers.am.name];
-
+    var modules = [dns.controllers.name];
 
     var am = angular
-        .module(context.namespace.modules.directives.name, modules);
+        .module(dns.name, modules);
 
+    require('./controllers/index.js');
 
     require('./rightClick.js');
 

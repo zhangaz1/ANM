@@ -28,6 +28,8 @@ function createModule() {
         ])
         .run(router.run)
         .config(router.config);
+
+    return am;
 }
 
 module.exports = {

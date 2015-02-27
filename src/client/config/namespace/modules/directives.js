@@ -22,4 +22,14 @@ var directives = {
     }
 };
 
+directives.controllers = {
+    name: context.vsf('%s.controllers', [directives.name]),
+    header: {
+        name: 'dheaderController'
+    },
+    footer: {
+        name: 'dfooterController'
+    }
+};
+
 module.exports = directives;

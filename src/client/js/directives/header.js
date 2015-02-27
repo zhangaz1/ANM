@@ -11,7 +11,7 @@ angular
             restrict: 'E',
             transclude: true,
             template: context.templates.directives.header,
-            controller: 'headerController',
+            controller: dns.controllers.header.name,
             replace: true
         };
     });

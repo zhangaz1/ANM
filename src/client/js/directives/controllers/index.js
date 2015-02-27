@@ -6,21 +6,11 @@ var context = require('/config/context.js');
 function createModule() {
     var modules = [];
 
-    var controllers = {
-        'header': require('./header.js'),
-        'footer': require('./footer.js')
-    };
-
     var am = angular
-        .module(context.app.name + 'directives.controllers', modules);
+        .module(context.namespace.modules.directives.controllers.name, modules);
 
-    context.modulesLoader(controllers,
-        function(controllerName) {
-            am.controller(
-                controllerName + 'Controller',
-                controllers[controllerName]
-            );
-        });
+    require('./header.js');
+    require('./footer.js');
 
     return am;
 }
