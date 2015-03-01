@@ -6,6 +6,8 @@ function createTask(context) {
     context.gulp.task(
         tasks.devOnLine,
         'dev online open home and livereload', [
+            tasks.clean,
+
             tasks.build,
 
             tasks.runAllServers,

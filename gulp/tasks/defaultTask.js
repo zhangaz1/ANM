@@ -6,6 +6,7 @@ function createTask(context) {
     context.gulp.task(
         tasks.default,
         'run default task', [
+            tasks.clean,
             tasks.build,
             tasks.runAllServers,
             tasks.runAllTests,

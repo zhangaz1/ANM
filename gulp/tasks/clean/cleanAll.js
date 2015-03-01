@@ -4,10 +4,9 @@ function createTask(context) {
     var tasks = context.tasks;
 
     context.gulp.task(
-        tasks.buildClient,
-        'build client', [
-            tasks.buildClientStyles,
-            tasks.buildClientJses
+        tasks.clean,
+        'clean', [
+            tasks.cleanClient
         ],
         function(done) {
             done(null);

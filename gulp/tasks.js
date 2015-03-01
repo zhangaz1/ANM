@@ -11,6 +11,12 @@ var tasks = {
     buildClientStyles: 'buildClientStyles',
     buildClientJses: 'buildClientJses',
 
+    clean: 'clean',
+
+    cleanClient: 'cleanClient',
+    cleanClientBuild: 'cleanClientBuild',
+    cleanClientComponents: 'cleanClientComponents',
+
     runAllServers: 'runAllServers',
     runWebServer: 'runWebServer',
     runSeleniumServer: 'runSeleniumServer',
@@ -46,47 +52,55 @@ var tasks = {
 };
 
 function addTasks(context) {
-    require('./tasks/buildServer')(context);
 
-    require('./tasks/buildClientStyles')(context);
-    require('./tasks/buildClientJses')(context);
-    require('./tasks/buildClient')(context);
+    require('./tasks/clean/cleanClientBuild.js')(context);
+    require('./tasks/clean/cleanClientComponents.js')(context);
+    require('./tasks/clean/cleanClient.js')(context);
 
-    require('./tasks/build')(context);
+    require('./tasks/clean/cleanAll.js')(context);
 
-    require('./tasks/runMongoDBServer')(context);
-    require('./tasks/runRedisServer')(context);
-    require('./tasks/runWebServer')(context);
-    require('./tasks/runSeleniumServer')(context);
-    require('./tasks/runAllServers')(context);
 
-    require('./tasks/runServerUnitTests')(context);
-    require('./tasks/runKarmaClientUnitTests')(context);
-    require('./tasks/runUnitTests')(context);
+    require('./tasks/build/buildServer.js')(context);
 
-    require('./tasks/runKarmaClientBddTests')(context);
-    require('./tasks/runProtractorClientBddTests')(context);
-    require('./tasks/runBddTests')(context);
+    require('./tasks/build/buildClientStyles.js')(context);
+    require('./tasks/build/buildClientJses.js')(context);
+    require('./tasks/build/buildClient.js')(context);
 
-    require('./tasks/runAllTests')(context);
+    require('./tasks/build/buildAll.js')(context);
 
-    require('./tasks/watchGulpSelf')(context);
+    require('./tasks/servers/runMongoDBServer.js')(context);
+    require('./tasks/servers/runRedisServer.js')(context);
+    require('./tasks/servers/runWebServer.js')(context);
+    require('./tasks/servers/runSeleniumServer.js')(context);
+    require('./tasks/servers/runAllServers.js')(context);
 
-    require('./tasks/watchClientTemplates')(context);
-    require('./tasks/watchClientJses')(context);
-    require('./tasks/watchClientStyles')(context);
+    require('./tasks/test/runServerUnitTests.js')(context);
+    require('./tasks/test/runKarmaClientUnitTests.js')(context);
+    require('./tasks/test/runUnitTests.js')(context);
 
-    require('./tasks/watchServerUnitTests')(context);
-    require('./tasks/watchKarmaClientUnitTests')(context);
-    require('./tasks/watchKarmaClientBddTests')(context);
-    require('./tasks/watchProtractorClientBddTests')(context);
-    require('./tasks/watchAll')(context);
+    require('./tasks/test/runKarmaClientBddTests.js')(context);
+    require('./tasks/test/runProtractorClientBddTests.js')(context);
+    require('./tasks/test/runBddTests.js')(context);
 
-    require('./tasks/runLiveReloadServer')(context);
-    require('./tasks/browserHomePage')(context);
-    require('./tasks/devOnLine')(context);
+    require('./tasks/test/runAllTests.js')(context);
 
-    require('./tasks/defaultTask')(context);
+    require('./tasks/watch/watchGulpSelf.js')(context);
+
+    require('./tasks/watch/watchClientTemplates.js')(context);
+    require('./tasks/watch/watchClientJses.js')(context);
+    require('./tasks/watch/watchClientStyles.js')(context);
+
+    require('./tasks/watch/watchServerUnitTests.js')(context);
+    require('./tasks/watch/watchKarmaClientUnitTests.js')(context);
+    require('./tasks/watch/watchKarmaClientBddTests.js')(context);
+    require('./tasks/watch/watchProtractorClientBddTests.js')(context);
+    require('./tasks/watch/watchAll.js')(context);
+
+    require('./tasks/dev/runLiveReloadServer.js')(context);
+    require('./tasks/dev/browserHomePage.js')(context);
+    require('./tasks/dev/devOnLine.js')(context);
+
+    require('./tasks/defaultTask.js')(context);
 }
 
 function createTasks(context) {

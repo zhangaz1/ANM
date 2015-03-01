@@ -1,13 +1,13 @@
 'use strict';
 
 var pathHelper = require('path-helper')(__dirname);
-var serverBoot = pathHelper.resolve('./../../src/boot');
+var serverBoot = pathHelper.resolve('./../../../src/boot');
 
 var httpServer;
 
 function runWebByExecCmd() {
     if (!httpServer) {
-        var execCmd = require('./../../common/cmd/execCmd');
+        var execCmd = require('./../../../common/cmd/execCmd');
 
         var cmd = 'gnodemon ' + serverBoot;
         httpServer = execCmd(cmd);

@@ -8,6 +8,7 @@ module.exports = {
     appStyleFile: pathHelper.resolve('./../src/client/app.css'),
     clientAppJsFile: pathHelper.resolve('./../src/client/app.js'),
     clientBuildDir: pathHelper.resolve('./../src/client/build'),
+    clientComponentsDir: pathHelper.resolve('./../src/client/components'),
 
     runWebBy: 'cmd', // 'cmd','in' // default is in
     serverUnitConfig: pathHelper.resolve('./../test/config/server.unit.conf.js'),
@@ -36,5 +37,4 @@ module.exports = {
     karmaClientUnitTestJs: pathHelper.resolve('./../test/client/unit/**/*.js'),
     karmaClientBddTestJs: pathHelper.resolve('./../test/client/bdd/karma/**/*.js'),
     protractorClientBddTestJs: pathHelper.resolve('./../test/client/bdd/protractor/**/*.js')
-
 };
