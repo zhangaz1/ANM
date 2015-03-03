@@ -23,7 +23,10 @@ function createTask(context) {
 
     context.gulp.task(
         tasks.runProtractorClientBddTests,
-        'run karm client bdd tests',
+        'run karm client bdd tests', [
+            tasks.runWebServer,
+            tasks.runSeleniumServer
+        ],
         function(done) {
             runProtractorClientBddTests(context, done);
         }

@@ -18,7 +18,7 @@ function createTask(context) {
 
     context.gulp.task(
         tasks.runKarmaClientBddTests,
-        'run karm client bdd tests',
+        'run karm client bdd tests', [tasks.runWebServer],
         function(done) {
             runKarmaClientBddTests(context, done);
         }
