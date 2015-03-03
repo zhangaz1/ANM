@@ -1,5 +1,6 @@
 'use strict';
 
+
 var del = require('del');
 
 function createTask(context) {
@@ -7,13 +8,11 @@ function createTask(context) {
 
     context.gulp.task(
         tasks.cleanClient,
-        'clean client', [
+        'clean client',
+        context.gulpSequence(
             tasks.cleanClientBuild,
             tasks.cleanClientComponents
-        ],
-        function(done) {
-            done(null);
-        }
+        )
     );
 };
 

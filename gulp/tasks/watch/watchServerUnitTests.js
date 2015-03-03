@@ -1,5 +1,6 @@
 'use strict';
 
+
 module.exports = function(context) {
     require('./watchTask')({
         gulp: context.gulp,

@@ -1,5 +1,6 @@
 'use strict';
 
+
 var del = require('del');
 
 function createTask(context) {

@@ -1,16 +1,16 @@
 'use strict';
 
+
 function createTask(context) {
     var tasks = context.tasks;
 
     context.gulp.task(
         tasks.clean,
-        'clean', [
+        'clean',
+        context.gulpSequence(
             tasks.cleanClient
-        ],
-        function(done) {
-            done(null);
-        });
+        )
+    );
 }
 
 module.exports = createTask;

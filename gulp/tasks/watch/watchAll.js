@@ -1,10 +1,12 @@
 'use strict';
 
+
 function createTask(context) {
     var tasks = context.tasks;
     context.gulp.task(
         tasks.watchAll,
-        'watch all', [
+        'watch all',
+        context.gulpSequence(
             tasks.watchClientStyles,
             tasks.watchClientJses,
             tasks.watchClientTemplates,
@@ -13,10 +15,8 @@ function createTask(context) {
             tasks.watchKarmaClientUnitTests,
             tasks.watchKarmaClientBddTests,
             tasks.watchProtractorClientBddTests
-        ],
-        function(done) {
-            done(null);
-        });
+        )
+    );
 }
 
 module.exports = createTask;

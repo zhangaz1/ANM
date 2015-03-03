@@ -1,5 +1,6 @@
 'use strict';
 
+
 function createTask(option) {
     var taskName = option.taskName;
     var gulp = option.gulp;
@@ -10,7 +11,7 @@ function createTask(option) {
         if (!watchesCache[taskName]) {
             gulp.watch(option.files,
                 function() {
-                    gulp.run(option.task);
+                    gulp.start(option.task);
                 });
             watchesCache[taskName] = true;
         }

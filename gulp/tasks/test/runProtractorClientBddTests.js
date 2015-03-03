@@ -1,5 +1,6 @@
 'use strict';
 
+
 var gp = require('gulp-protractor');
 
 function runProtractorClientBddTests(context, done) {
@@ -22,14 +23,11 @@ function createTask(context) {
 
     context.gulp.task(
         tasks.runProtractorClientBddTests,
-        'run karm client bdd tests', [
-            tasks.runWebServer,
-            tasks.runSeleniumServer
-        ],
+        'run karm client bdd tests',
         function(done) {
             runProtractorClientBddTests(context, done);
         }
     );
-};
+}
 
 module.exports = createTask;

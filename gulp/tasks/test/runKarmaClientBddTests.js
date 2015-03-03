@@ -1,5 +1,6 @@
 'use strict';
 
+
 var karma = require('karma').server;
 
 function runKarmaClientBddTests(context, done) {
@@ -17,11 +18,11 @@ function createTask(context) {
 
     context.gulp.task(
         tasks.runKarmaClientBddTests,
-        'run karm client bdd tests', [tasks.runWebServer],
+        'run karm client bdd tests',
         function(done) {
             runKarmaClientBddTests(context, done);
         }
     );
-};
+}
 
 module.exports = createTask;

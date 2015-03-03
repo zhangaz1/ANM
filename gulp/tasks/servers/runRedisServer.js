@@ -1,13 +1,13 @@
 'use strict';
 
+
 var taskName;
 
 function createTaskHandler(context) {
     return function runRedisServer(done) {
         var watchesCache = context.tasks.watchesCache;
         if (!watchesCache[taskName]) {
-            var execCmd = require('./../../../common/cmd/execCmd');
-            watchesCache[taskName] = execCmd('redis-server');
+            watchesCache[taskName] = context.tools.execCmd('redis-server');
         }
         done(null);
     };

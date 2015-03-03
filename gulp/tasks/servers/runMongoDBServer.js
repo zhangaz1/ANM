@@ -1,13 +1,13 @@
 'use strict';
 
+
 var taskName;
 
 function createTaskHandler(context) {
     return function runMongoDBServer(done) {
         var watchesCache = context.tasks.watchesCache;
         if (!watchesCache[taskName]) {
-            var execCmd = require('./../../../common/cmd/execCmd');
-            watchesCache[taskName] = execCmd('mongodcmd');
+            watchesCache[taskName] = context.tools.execCmd('mongodcmd');
         }
         done(null);
     };

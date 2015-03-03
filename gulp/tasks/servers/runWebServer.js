@@ -1,16 +1,16 @@
 'use strict';
 
+
 var pathHelper = require('path-helper')(__dirname);
 var serverBoot = pathHelper.resolve('./../../../src/boot');
 
+
 var httpServer;
 
-function runWebByExecCmd() {
+function runWebByExecCmd(context) {
     if (!httpServer) {
-        var execCmd = require('./../../../common/cmd/execCmd');
-
         var cmd = 'gnodemon ' + serverBoot;
-        httpServer = execCmd(cmd);
+        httpServer = context.tools.execCmd(cmd);
     }
 }
 
@@ -24,7 +24,7 @@ function runWebServer(context, done) {
     if (!watchesCache[taskName]) {
         switch (context.config.runWebBy) {
             case 'cmd':
-                runWebByExecCmd();
+                runWebByExecCmd(context);
                 break;
             case 'in':
             default:

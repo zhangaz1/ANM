@@ -1,5 +1,6 @@
 'use strict';
 
+
 var karma = require('karma').server;
 
 function runKarmaClientUnitTests(context, done) {
@@ -20,6 +21,6 @@ function createTask(context) {
             runKarmaClientUnitTests(context, done);
         }
     );
-};
+}
 
 module.exports = createTask;

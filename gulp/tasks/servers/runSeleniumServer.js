@@ -1,13 +1,13 @@
 'use strict';
 
+
 var taskName;
 
 function createTaskHandler(context) {
     return function runSeleniumServer(done) {
         var watchesCache = context.tasks.watchesCache;
         if (!watchesCache[taskName]) {
-            var execCmd = require('./../../../common/cmd/execCmd');
-            watchesCache[taskName] = execCmd('seleniumserver');
+            watchesCache[taskName] = context.tools.execCmd('seleniumserver');
         }
         done(null);
     };
