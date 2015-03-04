@@ -28,12 +28,12 @@ module.exports = {
     },
     onEnter: function(simpleData) {
         if (simpleData) {
-            alert(simpleData);
+            alert('进入首页事件');
         }
     },
     onExit: function(simpleData) {
         if (simpleData) {
-            alert(simpleData);
+            alert('退出首页事件');
         }
     },
     resolve: {

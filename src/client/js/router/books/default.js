@@ -2,7 +2,8 @@
 
 
 var context = require('/config/context.js');
-var books = context.namespace.modules.router.books;
+var router = context.namespace.modules.router;
+var books = router.books;
 
 var stateFactory = require('./../stateFactory.js');
 
@@ -12,16 +13,6 @@ state.data = {
     states: ['list', 'add']
 };
 
-state.controller = ['$scope', '$state', function($scope, $state) {
-    $scope.panels = $state.current.data.states;
-
-    $scope.selected = function() {
-        alert('更改了tab');
-    };
-
-    $scope.rightClick = function(scope, event) {
-        alert('right click');
-    };
-}];
+state.controller = router.controllers.books.default.name;
 
 module.exports = state;

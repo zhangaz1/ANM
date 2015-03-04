@@ -10,14 +10,14 @@ module.exports = [
         $rootScope.$on('$stateChangeStart',
             function(event, toState, toParams, fromState, fromParams) {
                 if (toState.name == 'else' && toParams.type != 'header') {
-                    alert('must be header');
+                    alert('stateChangeStart事件&' + 'toParams参数检查：must be header');
                     event.preventDefault();
                 }
             });
 
         $rootScope.$on('$stateNotFound',
             function(event, unfoundState, fromState, fromParams) {
-                alert('state(' + unfoundState.to + ') not found!');
+                alert('不存在的state的处理：state(' + unfoundState.to + ') not found!');
                 console.log(unfoundState.to); // "lazy.state"
                 console.log(unfoundState.toParams); // {a:1, b:2}
                 console.log(unfoundState.options); // {inherit:false} + default options

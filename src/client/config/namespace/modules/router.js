@@ -31,8 +31,7 @@ var router = {
             url: '/foo'
         },
         images: {
-            name: 'images',
-            url: '/images'
+            name: 'images'
         },
         settings: {
             name: 'settings',
@@ -57,18 +56,25 @@ var router = {
         list: {
             name: 'list'
         }
+    },
+    images: {
+        name: 'images',
+        'default': {
+            name: 'default'
+        },
+        'detail': {
+            name: 'detail'
+        },
+        edit: {
+            name: 'edit'
+        },
+        list: {
+            name: 'list'
+        }
     }
 };
 
-router.controllers = {
-    name: context.vsf('%s.controllers', [router.name])
-};
-
-router.controllers.base = {
-    name: context.vsf('%s.base', [router.controllers.name]),
-    start: {
-        name: 'startController'
-    }
-};
+require('./routerControllers.js')(router);
+require('./routerStates.js')(router);
 
 module.exports = router;

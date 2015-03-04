@@ -13,5 +13,6 @@ module.exports = ['$stateProvider', '$urlRouterProvider',
 
         require('./base/index.js')($stateProvider);
         require('./books/index.js')($stateProvider);
+        require('./images/index.js')($stateProvider);
     }
 ];

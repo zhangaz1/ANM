@@ -16,6 +16,12 @@ module.exports = {
         edit: require('./books/edit.html'),
         list: require('./books/list.html')
     },
+    images: {
+        'default': require('./images/default.html'),
+        detail: require('./images/detail.html'),
+        edit: require('./images/edit.html'),
+        list: require('./images/list.html')
+    },
     directives: {
         panel: require('./directives/panel.html'),
         tabs: require('./directives/tabs.html'),

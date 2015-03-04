@@ -5,7 +5,9 @@ var context = require('/config/context.js');
 var cns = context.namespace.modules.router.controllers;
 
 var modules = [
-    cns.base.name
+    cns.base.name,
+    cns.books.name,
+    cns.images.name
 ];
 
 context
@@ -13,3 +15,5 @@ context
     .module(cns.name, modules);
 
 require('./base/index.js');
+require('./books/index.js');
+require('./images/index.js');
