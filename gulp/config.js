@@ -10,6 +10,21 @@ module.exports = {
     clientBuildDir: pathHelper.resolve('./../src/client/build'),
     clientComponentsDir: pathHelper.resolve('./../src/client/components'),
 
+    clientFiles: [
+        pathHelper.resolve('./../src/client/index.html'),
+        pathHelper.resolve('./../src/client/favicon.ico'),
+        pathHelper.resolve('./../src/client/bower.json'),
+        pathHelper.resolve('./../src/client/**/build/**/*.*')
+    ],
+    serverFiles: pathHelper.resolve('./../src/**/server/**/*.*'),
+    bootFiles: [
+        pathHelper.resolve('./../src/**/boot/**/*.*'),
+        pathHelper.resolve('./../src/index.js'),
+        pathHelper.resolve('./../package.json')
+    ],
+    clientReleaseDir: pathHelper.resolve('./../dist/client'),
+    releaseDir: pathHelper.resolve('./../dist'),
+
     runWebBy: 'cmd', // 'cmd','in' // default is in
     serverUnitConfig: pathHelper.resolve('./../test/config/server.unit.conf.js'),
     karmaClientUnitConfig: pathHelper.resolve('./../test/config/karma-client.unit.conf.js'),

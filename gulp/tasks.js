@@ -3,6 +3,13 @@
 var tasks = {
     'default': 'default',
 
+    release: 'release',
+    dist: 'dist',
+    distServer: 'distServer',
+    distClient: 'distClient',
+    distBoot: 'distBoot',
+    cleanDist: 'cleanDist',
+
     build: 'build',
 
     buildServer: 'buildServer',
@@ -59,7 +66,6 @@ function addTasks(context) {
 
     require('./tasks/clean/cleanAll.js')(context);
 
-
     require('./tasks/build/buildServer.js')(context);
 
     require('./tasks/build/buildClientStyles.js')(context);
@@ -67,6 +73,13 @@ function addTasks(context) {
     require('./tasks/build/buildClient.js')(context);
 
     require('./tasks/build/buildAll.js')(context);
+
+    require('./tasks/release/cleanDist.js')(context);
+    require('./tasks/release/distBoot.js')(context);
+    require('./tasks/release/distServer.js')(context);
+    require('./tasks/release/distClient.js')(context);
+    require('./tasks/release/dist.js')(context);
+    require('./tasks/release/release.js')(context);
 
     require('./tasks/servers/runMongoDBServer.js')(context);
     require('./tasks/servers/runRedisServer.js')(context);

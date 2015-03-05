@@ -5,13 +5,14 @@ function createTask(context) {
     var tasks = context.tasks;
 
     context.gulp.task(
-        tasks.cleanClient,
-        'clean client',
+        tasks.dist,
+        'dist',
         context.gulpSequence(
-            tasks.cleanClientBuild,
-            tasks.cleanClientComponents
+            tasks.distServer,
+            tasks.distClient,
+            tasks.distBoot
         )
     );
-};
+}
 
 module.exports = createTask;
