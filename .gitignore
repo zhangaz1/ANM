@@ -6,6 +6,9 @@ node_modules/*
 */*/bower_components/*
 bower_components/*
 
+*/*/dist/*
+dist/*
+
 */*/build/*
 build/*
 
