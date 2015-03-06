@@ -4,10 +4,6 @@
 var context = require('/config/context.js');
 var images = context.namespace.modules.router.images;
 
-var stateFactory = require('./../stateFactory.js');
-
-var state = stateFactory(images.name, images.detail.name);
-
-state.url += '/{id}';
-
-module.exports = state;
+module.exports = {
+    template: context.templates[images.name][images.detail.name]
+};

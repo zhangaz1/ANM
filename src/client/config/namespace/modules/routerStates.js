@@ -8,6 +8,14 @@ module.exports = function(router) {
         name: context.vsf('%s.states', [router.name])
     };
 
+    router.states.layout = {
+        name: context.vsf('%s.layout', [router.states.name]),
+        default: {
+            name: 'layout_default'
+        }
+    };
+
+
     router.states.base = {
         name: context.vsf('%s.base', [router.states.name]),
         start: {

@@ -42,6 +42,12 @@ var router = {
             url: '/start'
         }
     },
+    layout: {
+        name: 'layout',
+        default: {
+            name: 'default'
+        }
+    },
     books: {
         name: 'books',
         'default': {

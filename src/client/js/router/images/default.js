@@ -5,20 +5,17 @@ var context = require('/config/context.js');
 var router = context.namespace.modules.router;
 var images = router.images;
 
-var stateFactory = require('./../stateFactory.js');
-
-var state = stateFactory(images.name, images.default.name);
-
-state.views = {
-    '': state,
-    '@': {
-        template: 'hhhh'
-    },
-    'lp': {
-        template: 'images<span ui-view="lp"></span>'
+var state = {
+    name: images.name,
+    url: '/' + images.name,
+    parent: router.states.layout.default.name,
+    views: {
+        breadcrumb: {
+            template: 'images'
+        },
+        list: require('./list.js'),
+        detail: require('./detail.js')
     }
 };
-
-state.abstract = false;
 
 module.exports = state;

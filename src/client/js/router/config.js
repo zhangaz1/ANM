@@ -12,6 +12,7 @@ module.exports = ['$stateProvider', '$urlRouterProvider',
         //     .otherwise('/');
 
         require('./base/index.js')($stateProvider);
+        require('./layout/index.js')($stateProvider);
         require('./books/index.js')($stateProvider);
         require('./images/index.js')($stateProvider);
     }

@@ -27,17 +27,15 @@
 </head>
 
 <body data-spy="scroll" data-target="#myScrollspy">
+    <div class="row">
+        <dheader></dheader>
 
-    <dheader></dheader>
+        <div ui-view>
+            <i>Some content will load here!</i>
+        </div>
 
-    <span>当前位置：<span ui-view="lp"></span></span>
-
-    <div ui-view>
-        <i>Some content will load here!</i>
+        <dfooter></dfooter>
     </div>
-
-    <dfooter></dfooter>
-
 </body>
 
 </html>
