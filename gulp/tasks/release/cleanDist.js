@@ -1,16 +1,16 @@
 'use strict';
 
 
-var clean = require('gulp-clean');
+// var clean = require('gulp-clean');
 var del = require('del');
 
-function cleanDist(context, done) {
-    context.gulp
-        .src(context.config.releaseDir)
-        .pipe(clean());
+// function cleanDist(context, done) {
+//     context.gulp
+//         .src(context.config.releaseDir)
+//         .pipe(clean());
 
-    done(null);
-}
+//     done(null);
+// }
 
 function createTask(context) {
     context.gulp.task(

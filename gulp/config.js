@@ -12,6 +12,7 @@ module.exports = {
 
     clientFiles: [
         pathHelper.resolve('./../src/client/index.html'),
+        pathHelper.resolve('./../src/client/loadResource.js'),
         pathHelper.resolve('./../src/client/favicon.ico'),
         pathHelper.resolve('./../src/client/bower.json'),
         pathHelper.resolve('./../src/client/**/build/**/*.*')

@@ -1,18 +1,18 @@
 'use strict';
 
 
-var clean = require('gulp-clean');
+// var clean = require('gulp-clean');
 var del = require('del');
 
-function cleanClientBuild(context, done) {
-    context.gulp
-        .src(context.config.clientBuildDir)
-        .pipe(clean({
-            force: true
-        }));
+// function cleanClientBuild(context, done) {
+//     context.gulp
+//         .src(context.config.clientBuildDir)
+//         .pipe(clean({
+//             force: true
+//         }));
 
-    done(null);
-}
+//     done(null);
+// }
 
 function createTask(context) {
     context.gulp.task(
