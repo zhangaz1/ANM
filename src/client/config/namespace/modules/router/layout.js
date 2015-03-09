@@ -3,7 +3,7 @@
 
 module.exports = {
     name: 'layout',
-    default: {
+    'default': {
         name: 'default'
     }
 };

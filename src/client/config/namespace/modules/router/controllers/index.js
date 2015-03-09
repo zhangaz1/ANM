@@ -8,24 +8,7 @@ module.exports = function(router) {
         name: context.vsf('%s.controllers', [router.name])
     };
 
-    router.controllers.base = {
-        name: context.vsf('%s.base', [router.controllers.name]),
-        start: {
-            name: 'startController'
-        }
-    };
-
-    router.controllers.books = {
-        name: context.vsf('%s.books', [router.controllers.name]),
-        default: {
-            name: 'books_defaultController'
-        }
-    };
-
-    router.controllers.images = {
-        name: context.vsf('%s.images', [router.controllers.name]),
-        default: {
-            name: 'defaultController'
-        }
-    };
+    router.controllers.base = require('./base.js')(router);
+    router.controllers.books = require('./books.js')(router);
+    router.controllers.images = require('./images.js')(router);
 };

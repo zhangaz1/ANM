@@ -4,7 +4,7 @@
 module.exports = {
     layout: {
         breadcrumb: require('./layout/breadcrumb.html'),
-        default: require('./layout/default.html')
+        'default': require('./layout/default.html')
     },
     base: {
         about: require('./base/about.html'),
