@@ -23,14 +23,14 @@ context
                     if (panel.click) {
                         panel.click();
                     }
-                }
+                };
 
                 this.addPanel = function(panel) {
-                    if (panels.length == 0) {
+                    if (panels.length === 0) {
                         $scope.select(panel);
                     }
                     panels.push(panel);
-                }
+                };
             }],
             template: context.templates.directives.tabs,
             replace: true

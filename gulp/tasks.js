@@ -3,6 +3,9 @@
 var tasks = {
     'default': 'default',
 
+    hint: 'hint',
+    min: 'min',
+
     release: 'release',
     dist: 'dist',
     distServer: 'distServer',
@@ -59,6 +62,8 @@ var tasks = {
 };
 
 function addTasks(context) {
+    require('./tasks/codeQuality/hint.js')(context);
+    require('./tasks/codeQuality/min.js')(context);
 
     require('./tasks/clean/cleanClientBuild.js')(context);
     require('./tasks/clean/cleanClientComponents.js')(context);

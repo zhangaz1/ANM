@@ -2,7 +2,7 @@
 
 var pathHelper = require('path-helper')(__dirname);
 
-module.exports = {
+var config = {
     homePage: 'http://localhost:3000/',
 
     appStyleFile: pathHelper.resolve('./../src/client/app.css'),
@@ -54,3 +54,7 @@ module.exports = {
     karmaClientBddTestJs: pathHelper.resolve('./../test/client/bdd/karma/**/*.js'),
     protractorClientBddTestJs: pathHelper.resolve('./../test/client/bdd/protractor/**/*.js')
 };
+
+config.minFiles = [config.releaseDir + '/**/*.js'];
+
+module.exports = config;
