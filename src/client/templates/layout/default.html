@@ -1,17 +1,20 @@
-<div class="row">
-    <span>当前位置：<span ui-view="breadcrumb"></span></span>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><span>当前位置：<span ui-view="breadcrumb"></span></span></h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-9">
+                <div ui-view="list">
+                    <i>list!</i>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div ui-view=" detail ">
+                    <i>detail!</i>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<dir class="row">
-    <div class="col-md-9">
-        <div ui-view="list">
-            <i>list!</i>
-        </div>
-    </div>
-
-    <div class="col-md-3">
-        <div ui-view="detail">
-            <i>detail!</i>
-        </div>
-    </div>
-</dir>
