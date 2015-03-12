@@ -1,7 +1,8 @@
 # ANM(Angular+Nodejs+MongoDB)
 
 js全栈实践，ANM主要做各种技术组合的使用示例，并没有做成产品的计划。
-演示站点：http://anm.coding.net
+
+演示站点：http://anm.coding.io
 
 ## 当前进展和阶段：
 
