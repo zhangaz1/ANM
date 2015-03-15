@@ -3,17 +3,24 @@
 
 var context = require('/config/context.js');
 
-module.exports = ['$stateProvider', '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
-        // $urlRouterProvider
-        //     .when('/c?id', '/contacts/:id')
-        //     .when('/user/:id', '/contact/:id')
-        //     .when('/s', '/start')
-        //     .otherwise('/');
+module.exports = ['$stateProvider', '$urlRouterProvider', '$locationProvider',
+	function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-        require('./base/index.js')($stateProvider);
-        require('./layout/index.js')($stateProvider);
-        require('./books/index.js')($stateProvider);
-        require('./images/index.js')($stateProvider);
-    }
+		// $urlRouterProvider
+		//     .when('/c?id', '/contacts/:id')
+		//     .when('/user/:id', '/contact/:id')
+		//     .when('/s', '/start')
+		//     .otherwise('/');
+
+		require('./base/index.js')($stateProvider);
+		require('./layout/index.js')($stateProvider);
+		require('./books/index.js')($stateProvider);
+		require('./images/index.js')($stateProvider);
+
+		$locationProvider
+			.html5Mode(true)
+			.hashPrefix('!');
+		// $locationProvider.html5mode = true;
+		// $locationProvider.hashPrefix = '!';
+	}
 ];

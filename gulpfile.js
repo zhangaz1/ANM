@@ -1,3 +1,6 @@
+'use strict';
+
+
 var gulp = require('gulp-help')(require('gulp'));
 var gulpSequence = require('gulp-sequence').use(gulp);
 
