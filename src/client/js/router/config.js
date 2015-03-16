@@ -17,6 +17,8 @@ module.exports = ['$stateProvider', '$urlRouterProvider', '$locationProvider',
 		require('./books/index.js')($stateProvider);
 		require('./images/index.js')($stateProvider);
 
+		$urlRouterProvider.otherwise('/');
+
 		$locationProvider
 			.html5Mode(true)
 			.hashPrefix('!');
