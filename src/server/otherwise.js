@@ -1,19 +1,15 @@
 'use strict';
 
 
-var pathHelper = require('path-helper')(__dirname);
-var sendfile = require('koa-sendfile');
+var urlUtil = require('url');
 
 module.exports = function(appContext) {
 	appContext.app.use(function*() {
-		// return this.response.redirect('back');
+		var url = urlUtil.parse(this.request.url, true);
+		url.query.route = url.pathname;
+		delete url.search;
+		delete url.pathname;
 
-		// return this.redirect('/');
-
-		var stats =
-			yield * sendfile.call(this, pathHelper.resolve('./../client/index.html'));
-		if (!this.status) {
-			this.throw(404);
-		}
+		return this.redirect('/' + urlUtil.format(url));
 	});
 };

@@ -7,7 +7,7 @@
 		];
 
 		for (var li in links) {
-			document.write('<link rel="stylesheet" href="/' + bc + links[li] + min + '.css" />');
+			document.write('<link rel="stylesheet" href="./' + bc + links[li] + min + '.css" />');
 		}
 	};
 
@@ -29,7 +29,7 @@
 		scripts.push(bc + (min ? 'sprintf/dist/sprintf.min.js' : 'sprintf/src/sprintf.js'));
 
 		for (li in scripts) {
-			document.write('<script type="text/javascript" language="javascript" src="/' + scripts[li] + '"></script>');
+			document.write('<script type="text/javascript" language="javascript" src="./' + scripts[li] + '"></script>');
 		}
 	};
 

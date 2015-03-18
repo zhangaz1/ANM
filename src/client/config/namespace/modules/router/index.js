@@ -4,11 +4,12 @@
 var context = require('/config/context.js');
 
 var router = {
-    name: context.vsf('%s.router', [context.app.name]),
-    base: require('./base.js'),
-    layout: require('./layout.js'),
-    books: require('./books.js'),
-    images: require('./images.js')
+	name: context.vsf('%s.router', [context.app.name]),
+	directToRoute: require('./directToRoute.js'),
+	base: require('./base.js'),
+	layout: require('./layout.js'),
+	books: require('./books.js'),
+	images: require('./images.js')
 };
 
 require('./controllers/index.js')(router);

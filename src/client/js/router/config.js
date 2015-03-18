@@ -12,6 +12,10 @@ module.exports = ['$stateProvider', '$urlRouterProvider', '$locationProvider',
 		//     .when('/s', '/start')
 		//     .otherwise('/');
 
+		require('./directToRoute.js')($stateProvider);
+		// $urlRouterProvider
+		// 	.when('/?route=', '/start');
+
 		require('./base/index.js')($stateProvider);
 		require('./layout/index.js')($stateProvider);
 		require('./books/index.js')($stateProvider);
