@@ -18,8 +18,7 @@
 			'jquery/dist/jquery',
 			'bootstrap/dist/js/bootstrap',
 			'angular/angular',
-			'angular-ui-router/release/angular-ui-router',
-			'angular-cookies/angular-cookies'
+			'angular-ui-router/release/angular-ui-router'
 		];
 
 		var li;

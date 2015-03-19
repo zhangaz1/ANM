@@ -6,7 +6,6 @@ var rns = context.namespace.modules.router;
 
 var modules = [
 	'ui.router',
-	'ngCookies',
 	rns.controllers.name
 ];
 
