@@ -13,8 +13,6 @@ module.exports = ['$stateProvider', '$urlRouterProvider', '$locationProvider',
 		//     .otherwise('/');
 
 		require('./directToRoute.js')($stateProvider);
-		// $urlRouterProvider
-		// 	.when('/?route=', '/start');
 
 		require('./base/index.js')($stateProvider);
 		require('./layout/index.js')($stateProvider);
@@ -26,7 +24,5 @@ module.exports = ['$stateProvider', '$urlRouterProvider', '$locationProvider',
 		$locationProvider
 			.html5Mode(true)
 			.hashPrefix('!');
-		// $locationProvider.html5mode = true;
-		// $locationProvider.hashPrefix = '!';
 	}
 ];

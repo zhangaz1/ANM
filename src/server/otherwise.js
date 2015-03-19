@@ -6,7 +6,10 @@ var urlUtil = require('url');
 module.exports = function(appContext) {
 	appContext.app.use(function*() {
 		var url = urlUtil.parse(this.request.url, true);
-		url.query.route = url.pathname;
+
+		// this.cookies.set('startPath', url.pathname); // 静态服务未重新返回cookie
+		url.query.startPath = url.pathname;
+
 		delete url.search;
 		delete url.pathname;
 

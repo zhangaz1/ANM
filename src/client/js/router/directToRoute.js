@@ -9,10 +9,14 @@ module.exports = function($stateProvider) {
 		.state({
 			name: directToRoute.name,
 			url: directToRoute.url,
-			controller: function($location, $state) {
+			controller: function($location, $state, $cookieStore) {
 				var search = $location.search();
-				var path = search.route;
-				delete search.route;
+
+				var path = search.startPath;
+				delete search.startPath;
+
+				// alert($cookieStore.get('startPath')); // 静态服务未重新返回cookie
+
 				$location.search(search);
 				$location.path(path);
 			}
