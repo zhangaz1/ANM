@@ -3,6 +3,7 @@
 
 var koa = require('koa');
 var route = require('koa-route');
+var router = require('koa-router');
 
 function addHandlers(appContext) {
 	require('./common/logger.js')(appContext);
@@ -12,8 +13,13 @@ function addHandlers(appContext) {
 }
 
 function initApp(appContext) {
-	appContext.app = koa();
+	var app = koa();
+
+	appContext.app = app;
 	appContext.route = route;
+	appContext.router = router;
+
+	app.use(router(app));
 
 	addHandlers(appContext);
 }

@@ -34,6 +34,7 @@
     "koa-logger": "^1.2.2",
     "koa-mongo-rest": "~0.2.0",
     "koa-route": "^2.4.0",
+    "koa-router": "~4.2.0",
     "koa-sendfile": "~1.1.0",
     "koa-static": "~1.4.9",
     "mongoose": "~3.8.25",
