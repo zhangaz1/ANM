@@ -17,6 +17,7 @@ module.exports = ['$stateProvider', '$urlRouterProvider', '$locationProvider',
 		require('./base/index.js')($stateProvider);
 		require('./layout/index.js')($stateProvider);
 		require('./books/index.js')($stateProvider);
+		require('./angularRestful/index.js')($stateProvider);
 		require('./images/index.js')($stateProvider);
 
 		$urlRouterProvider.otherwise('/');
