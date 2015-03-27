@@ -30,6 +30,7 @@
     "dev": "gulp devOnLine"
   },
   "dependencies": {
+    "debug": "~2.1.3",
     "koa": "^0.18.1",
     "koa-logger": "^1.2.2",
     "koa-mongo-rest": "~0.2.0",
