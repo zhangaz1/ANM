@@ -3,8 +3,8 @@
 
 var context = require('/config/context.js');
 
-module.exports = ['$stateProvider', '$urlRouterProvider', '$locationProvider',
-	function($stateProvider, $urlRouterProvider, $locationProvider) {
+module.exports = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$restfulProvider',
+	function($stateProvider, $urlRouterProvider, $locationProvider, $restfulProvider) {
 
 		// $urlRouterProvider
 		//     .when('/c?id', '/contacts/:id')
@@ -25,5 +25,7 @@ module.exports = ['$stateProvider', '$urlRouterProvider', '$locationProvider',
 		$locationProvider
 			.html5Mode(true)
 			.hashPrefix('!');
+
+		$restfulProvider.url(context.namespace.modules.services.factories.url);
 	}
 ];

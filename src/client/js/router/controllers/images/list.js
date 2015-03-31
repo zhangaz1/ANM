@@ -22,7 +22,7 @@ context
 			};
 
 			$scope.detail = function(img) {
-				Image.detailImage = img;
+				Image.showImage = img;
 			}
 
 			$scope.edit = function(img) {

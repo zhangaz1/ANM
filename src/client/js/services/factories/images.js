@@ -10,7 +10,7 @@ context
 	.factory(sns.images.name, ['$restful', function($restful) {
 		return $restful(sns.images.url, {
 			params: {
-				id: '@id'
+				id: '@_id'
 			}
 		});
 	}]);

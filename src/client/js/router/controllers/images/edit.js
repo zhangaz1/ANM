@@ -17,19 +17,19 @@ context
 
 				if (angular.isDefined(img.id)) {
 					img.$update(function() {
-						Image.editImage = null;
+						Image.editImage = new Image();
 						Image.changedOn = new Date();
 					});
 				} else {
 					img.$create(function($img) {
-						Image.editImage = null;
+						Image.editImage = new Image();
 						Image.changedOn = new Date();
 					});
 				}
 			};
 
 			$scope.cancel = function() {
-				Image.editImage = null;
+				Image.editImage = new Image();
 			};
 		}
 	]);

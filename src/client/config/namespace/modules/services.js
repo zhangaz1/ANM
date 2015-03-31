@@ -16,9 +16,10 @@ var services = {
 	},
 	factories: {
 		name: 'factories',
+		url: '/api',
 		images: {
 			name: 'Image',
-			url: '/api/images/:id'
+			url: '/images/:id'
 		}
 	}
 };
