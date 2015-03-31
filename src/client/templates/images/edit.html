@@ -1,1 +1,13 @@
 <h1>images edit</h1>
+<form name="form">
+    <div class="control-group">
+        <label>Name</label>
+        <input type="text" name="name" ng-model="Image.editImage.name">
+    </div>
+    <div class="control-group">
+        <label>Path</label>
+        <input type="email" name="email" ng-model="Image.editImage.path">
+    </div>
+    <button ng-click="cancel()" class="btn">Cancel</button>
+    <button ng-click="save()" class="btn btn-primary">Save</button>
+</form>

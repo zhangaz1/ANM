@@ -9,6 +9,7 @@ var router = {
 	base: require('./base.js'),
 	layout: require('./layout.js'),
 	books: require('./books.js'),
+	angularRestful: require('./angularRestful.js'),
 	images: require('./images.js')
 };
 

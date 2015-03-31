@@ -1,8 +1,23 @@
-<h1>images list</h1>
-<h1>images list</h1>
-<h1>images list</h1>
-<h1>images list</h1>
-<h1>images list</h1>
-<h1>images list</h1>
-<h1>images list</h1>
-<h1>images list</h1>
+<h1>Images:</h1>
+<table>
+    <thead>
+    <tr>
+        <th style="width: 250px">Name</th>
+        <th style="width: 150px">Path</th>
+        <th style="width: 55px">
+            <a ng-click="create()"><i class="glyphicon glyphicon-plus"></i></a>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="image in images | orderBy:'name'">
+        <td>{{image.name}}</td>
+        <td>{{image.path}}</td>
+        <td>
+            <a ng-click="detail(image)"><i class="glyphicon glyphicon-list"></i></a>
+            <a ng-click="edit(image)"><i class="glyphicon glyphicon-pencil"></i></a>
+            <a ng-click="remove(image)"><i class="glyphicon glyphicon-remove"></i></a>
+        </td>
+    </tr>
+    </tbody>
+</table>

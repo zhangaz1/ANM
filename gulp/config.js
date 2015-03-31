@@ -1,5 +1,7 @@
 'use strict';
 
+
+var path = require('path');
 var pathHelper = require('path-helper')(__dirname);
 
 var config = {
@@ -55,6 +57,9 @@ var config = {
 	protractorClientBddTestJs: pathHelper.resolve('./../test/client/bdd/protractor/**/*.js')
 };
 
-config.minFiles = [config.clientReleaseDir + '/**/*.js'];
+config.minFiles = [
+	// config.clientReleaseDir + '/**/*.css', // 异常
+	config.clientReleaseDir + '/**/*.js'
+];
 
 module.exports = config;

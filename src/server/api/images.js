@@ -1,13 +1,17 @@
 'use strict';
 
 
-module.exports = function(appContext) {
-	appContext.app.use(appContext.route.get('/api/images/:id', someData));
-};
+var generateApi = require('koa-mongo-rest');
 
-function* someData(id) {
-	this.body = {
-		data: 'dataValue'
-	};
-	return;
-}
+module.exports = function(appContext) {
+	var mongoose = appContext.mongoose;
+
+	var schema = new mongoose.Schema({
+		name: String,
+		path: String
+	});
+
+	var model = mongoose.model('images', schema);
+
+	generateApi(appContext.app, model, '/api');
+};

@@ -3,6 +3,7 @@
 var pathHelper = require('path-helper')(__dirname);
 
 module.exports = {
-    port: process.env.PORT || 3000,
-    client: pathHelper.resolve('../../client')
+	mongoUrl: 'mongodb://sa:sa@127.0.0.1:27017/ANM',
+	port: process.env.PORT || 3000,
+	client: pathHelper.resolve('../../client')
 };
