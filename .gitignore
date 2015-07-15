@@ -12,9 +12,9 @@ dist/*
 */*/build/*
 build/*
 
+!gulp/**/*
+
 /src/client/components/*
 
 *.suo
 *.tmp
-
-

@@ -1,6 +1,6 @@
-(function() {
+(function () {
 
-	var loadCsses = function(bc, min) {
+	var loadCsses = function (bc, min) {
 		var links = [];
 		var baseLinks = [
 			'bootstrap/dist/css/bootstrap',
@@ -19,7 +19,7 @@
 		}
 	};
 
-	var loadJses = function(bc, min) {
+	var loadJses = function (bc, min) {
 		var scripts = [];
 		var baseScripts = [
 			'lodash/lodash',
@@ -42,7 +42,7 @@
 	};
 
 
-	var min = '';
+	var min = '.min';
 	var bc = './bower_components/';
 	loadCsses(bc, min);
 	loadJses(bc, min);
